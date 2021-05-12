@@ -4,7 +4,7 @@ import Sidebarrow from './Sidebarrow'
 
 function Sidebar() {
     return (
-        <div>
+        <div style={{flex:"0.33"}} >
         <Sidebarrow 
          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFsHxzphI1wcK4ic90u91I8jOfN_ObMaHaoCpu0gWPubTpKwYMvzWfhy5nkWj73lkt4Js&usqp=CAU"  
         title="Zlatan" />
