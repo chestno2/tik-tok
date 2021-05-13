@@ -11,7 +11,19 @@ function Feed() {
             {/* {Story} */}
             <Postbox />
             {/* {Post} */}
-            <Post />
+            <Post 
+            profile ="https://cdn.forzaitalianfootball.com/wp-content/uploads/2020/11/Zlatan-Ibrahimovic-AC-Milan-1-800x0-c-default.webp"
+            message="Wow this work"
+            timestamp ="timestamp" 
+            username="official_Zlatan"
+            image="https://cdn.forzaitalianfootball.com/wp-content/uploads/2020/11/Zlatan-Ibrahimovic-AC-Milan-1-800x0-c-default.webp"/>
+         <Post 
+            profile ="https://cdn.forzaitalianfootball.com/wp-content/uploads/2020/11/Zlatan-Ibrahimovic-AC-Milan-1-800x0-c-default.webp"
+            message="Wow this work"
+            timestamp ="timestamp" 
+            username="official_Zlatan"
+            image="https://cdn.forzaitalianfootball.com/wp-content/uploads/2020/11/Zlatan-Ibrahimovic-AC-Milan-1-800x0-c-default.webp"/>
+
         </div>
     )
 }
