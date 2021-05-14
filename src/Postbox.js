@@ -14,15 +14,16 @@ function Postbox() {
           setImage(" ");
     }
     return (
-        <div className="shadow-2xl p-5  rounded-2xl mt-3">
-            <div className="flex postbox_top " style={{alignItems:"center"}} >
+        <div className="shadow-2xl p-5  rounded-2xl mt-3  ">
+            <div className="flex postbox_top   " style={{alignItems:"center"}} >
                 <Avatar
                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFsHxzphI1wcK4ic90u91I8jOfN_ObMaHaoCpu0gWPubTpKwYMvzWfhy5nkWj73lkt4Js&usqp=CAU"
                  />
-                 <form className=" flex-1 flex" >
-                 <input onChange={(e)=> setText(e.target.value)} value={Text} placeholder="Enter Text" className=" flex-1 bg-gray-200 p-3  rounded-3xl mx-4 outline-none "   />
-                 <input onChange={(e)=>setImage(e.target.value)} value={Image} className="bg-gray-200 p-2 rounded-3xl  outline-none" placeholder="Enter Image URL" />
-           <button onClick={handleSubmit} type="submit" >
+                 <form className="  flex" >
+                 <input onChange={(e)=> setText(e.target.value)} value={Text} placeholder="Enter Text" className=" flex-1 bg-gray-200 p-3 px-5 rounded-3xl mx-4 outline-none "   />
+                 <input onChange={(e)=>setImage(e.target.value)} value={Image} className="bg-gray-200 px-2 rounded-3xl  outline-none" placeholder="Enter Image URL" />
+           
+           <button onClick={handleSubmit} type="submit" className="hidden"  >
                Hidden Submit
            </button>
            </form>
