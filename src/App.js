@@ -5,11 +5,12 @@ import Header from "./Header";
 import LoginScreen from "./LoginScreen";
 
 import Sidebar from "./Sidebar";
+import { useStateValue } from "./StateProvider";
 import Widgets from "./Widgets";
 
 function App() {
-  
-  const user =null;
+   
+  const[{user} ,dispatch ]  = useStateValue()
   return (
    
   <div className="App" >
