@@ -4,18 +4,17 @@ import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
 import ChatBubbleIcon from '@material-ui/icons/ChatBubble';
 import ShareIcon from '@material-ui/icons/Share';
 
-function Post({profile , image ,username,timestamp,message}) {
+function Post({profile ,timestamp, image,username,message}) {
     return (
         <div className="shadow-xl rounded-2xl my-7 " >
             <div className="my-4 flex w-full  "style={{alignItems:"center"}} >
                 <Avatar className="w-full" src={profile} />
                 <div className="ml-3" >
                     <h3>{username}</h3>
-                    <p>{timestamp}
-                    </p>
+                    <p>{new Date(timestamp?.toDate()).toUTCString}</p>
                 </div>
             </div>
-            <div className="Post_bottom my-5 ">
+            <div className="Post_bottom pl-3 my-5 ">
                 <p>{message}</p>
             </div>
             <div className="Post_Img mt-3" >

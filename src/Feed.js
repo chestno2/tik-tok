@@ -1,9 +1,17 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import db from './fb'
 import Post from './Post'
 import Postbox from './Postbox'
 import Storyreel from './Storyreel'
 
 function Feed() {
+
+    const [posts, setPosts] = useState([])
+    useEffect(() => {
+        db.collection('posts').orderBy("timestamp","desc").onSnapshot((snapshot)=>
+            setPosts(snapshot.docs.map((doc)=>({id:doc.id,data:doc.data()})))
+        )
+    }, [])
     return (
         <div style={{flex:"0.33"}}>
             <Storyreel />
@@ -11,19 +19,16 @@ function Feed() {
             {/* {Story} */}
             <Postbox />
             {/* {Post} */}
-            <Post 
-            profile ="https://cdn.forzaitalianfootball.com/wp-content/uploads/2020/11/Zlatan-Ibrahimovic-AC-Milan-1-800x0-c-default.webp"
-            message="Wow this work"
-            timestamp ="timestamp" 
-            username="official_Zlatan"
-            image="https://cdn.forzaitalianfootball.com/wp-content/uploads/2020/11/Zlatan-Ibrahimovic-AC-Milan-1-800x0-c-default.webp"/>
-         <Post 
-            profile ="https://cdn.forzaitalianfootball.com/wp-content/uploads/2020/11/Zlatan-Ibrahimovic-AC-Milan-1-800x0-c-default.webp"
-            message="Wow this work"
-            timestamp ="timestamp" 
-            username="official_Zlatan"
-            image="https://cdn.forzaitalianfootball.com/wp-content/uploads/2020/11/Zlatan-Ibrahimovic-AC-Milan-1-800x0-c-default.webp"/>
-
+          {posts.map((post)=>(
+           <Post 
+           key={post.data.id}
+           profile={post.data.profile}
+           username={post.data.username}
+           message={post.data.message}
+           timestamp={post.data.timestamp}
+           image={post.data.image}
+           />
+          ))}
         </div>
     )
 }
