@@ -4,7 +4,7 @@ import { actionTypes } from './reducer'
 import { useStateValue } from './StateProvider'
 function LoginScreen() {
 
-    const [state, dispatch] = useStateValue()
+    const [state , dispatch] = useStateValue( )
     const signIn=()=>{
         
         auth.signInWithPopup(provider).then(result =>{
